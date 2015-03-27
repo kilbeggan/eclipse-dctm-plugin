@@ -1,0 +1,40 @@
+# $Log: dctmimportorde.importorder,v $
+# Revision 1.3  2005/01/08 01:34:04  harpechr
+# Imports sort order defined.
+#
+# Organize Import Order
+# Sat Jan 08 02:50:30 EET 2005
+33=javax
+32=java
+31=com
+30=com.documentum.xml
+19=com.documentum.operations
+18=com.documentum.nls
+17=com.documentum.job
+16=com.documentum.install
+15=com.documentum.fc
+14=com.documentum.dmcl
+13=com.documentum.djcb
+12=com.documentum.debug
+11=com.documentum.cps
+10=com.documentum.com
+9=com.documentum.ciservices
+29=com.documentum.xerces
+8=com.documentum.ci
+28=com.documentum.workflow
+7=com.documentum.bpm
+27=com.documentum.webtop
+6=com.documentum.bi
+26=com.documentum.webcomponent
+5=com.documentum.admin
+25=com.documentum.web
+4=com.documentum
+24=com.documentum.wc
+3=org
+23=com.documentum.vdm
+2=org.cah.eclipse
+22=com.documentum.tracing
+1=org.cah.util
+21=com.documentum.services
+0=org.cah
+20=com.documentum.registry

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+    	<extension point="org.eclipse.ui.perspectives">
+		<perspective
+        class="org.cah.eclipse.plugins.dctm.dql.Perspective"
+        icon="icons/documentum.gif"
+        name="%PERSPECTIVE_NAME"
+        id="org.cah.eclipse.plugins.dctm.dql.Perspective"/>
+	</extension>
+	<extension point="org.eclipse.ui.editors">
+		<editor icon="icons/dql.gif" class="org.cah.eclipse.plugins.dctm.dql.editors.DQLEditor" default="true" 
+			name="%DQL_EDITOR_NAME" contributorClass="org.cah.eclipse.plugins.dctm.dql.editors.dql.DQLContributor" 
+			id="org.cah.eclipse.plugins.dctm.dql.editors.DQLEditor" extensions="dql"/>
+  <editor
+        icon="icons/api.gif"
+        class="org.cah.eclipse.plugins.dctm.dql.editors.APIEditor"
+        default="true"
+        contributorClass="org.cah.eclipse.plugins.dctm.dql.editors.api.APIActionContributor"
+        name="%API_EDITOR_NAME"
+        id="org.cah.eclipse.plugins.dctm.dql.editors.APIEditor"
+        extensions="api"/>
+	</extension>
+	<extension point="org.eclipse.ui.views">
+		<category
+        name="%VIEW_NAME"
+        id="org.cah.eclipse.plugins.dctm.dql.views"/>
+		<view allowMultiple="false" icon="icons/connected_icon.gif" 
+			class="org.cah.eclipse.plugins.dctm.dql.views.ConnectionView" category="org.cah.eclipse.plugins.dctm.dql.views" 
+			name="%VIEW_CONNECTIONS" id="org.cah.eclipse.plugins.dctm.dql.views.ConnectionView"/>
+		<view
+        allowMultiple="false"
+        class="org.cah.eclipse.plugins.dctm.dql.views.MessageView"
+        icon="icons/icon_legend.gif"
+        category="org.cah.eclipse.plugins.dctm.dql.views"
+        name="%VIEW_MESSAGES"
+        id="org.cah.eclipse.plugins.dctm.dql.views.MessageView"/>
+		<view
+        allowMultiple="false"
+        class="org.cah.eclipse.plugins.dctm.dql.views.ResultView"
+        icon="icons/tables.gif"
+        category="org.cah.eclipse.plugins.dctm.dql.views"
+        name="%VIEW_RESULTS"
+        id="org.cah.eclipse.plugins.dctm.dql.views.ResultView"/>
+	</extension>
+</plugin>
+<!--
+	$Log: plugin.xml,v $
+	Revision 1.6  2005/11/22 13:27:07  madcook
+	Eclipse 3.2 compiler check warnings modified.
+
+	Revision 1.5  2005/04/01 11:30:45  harpechr
+	Version 2.0.0 modifications.
+	
+	Revision 1.4  2005/01/24 12:34:59  harpechr
+	Version 1.0.4 work started.
+	
+	Revision 1.3  2005/01/18 07:27:10  harpechr
+	Changed version from 1.0.2 to 1.0.3.
+	
+	Revision 1.2  2005/01/08 01:34:34  harpechr
+	CVS log defined.
+	
+-->

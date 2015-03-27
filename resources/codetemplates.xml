@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.gettercomment" name="gettercomment" description="Comment for getter method" context="gettercomment_context" enabled="true" deleted="false">
+/**
+ * ${todo} write getter description.&#13;
+ * &lt;DL&gt;&lt;DT&gt;&lt;B&gt;Created :&lt;/B&gt;&lt;DD&gt; ${date} ${time}&lt;/DD&gt;&lt;/DT&gt;&#13;
+ * &lt;DT&gt;&lt;B&gt;Author :&lt;/B&gt;&lt;DD&gt;${todo} change author name from Window > Preferences > Java > Code Style > Code Templates > Comments > Getters account : ${user}&lt;/DD&gt;&lt;/DT&gt;&lt;/DL&gt;&#13;
+ * @since 1.0.5
+ * @return Returns the ${bare_field_name}
+ */
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.settercomment" name="settercomment" description="Comment for setter method" context="settercomment_context" enabled="true" deleted="false">
+/**
+ * ${todo} write setter description.&#13;
+ * &lt;DL&gt;&lt;DT&gt;&lt;B&gt;Created :&lt;/B&gt;&lt;DD&gt; ${date} ${time}&lt;/DD&gt;&lt;/DT&gt;&#13;
+ * &lt;DT&gt;&lt;B&gt;Author :&lt;/B&gt;&lt;DD&gt;${todo} change author name from Window > Preferences > Java > Code Style > Code Templates > Comments > Setters  account : ${user}&lt;/DD&gt;&lt;/DT&gt;&lt;/DL&gt;&#13;
+ * @since 1.0.5
+ * @param ${param} The ${bare_field_name} to set
+ */
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.constructorcomment" name="constructorcomment" description="Comment for created constructors" context="constructorcomment_context" enabled="true" deleted="false">
+/**
+ * ${todo} write constructor description.
+ * &lt;DL&gt;&lt;DT&gt;&lt;B&gt;Created :&lt;/B&gt;&lt;DD&gt; ${date} ${time}&lt;/DD&gt;&lt;/DT&gt;
+ * &lt;DT&gt;&lt;B&gt;Author :&lt;/B&gt;&lt;DD&gt;${todo} change author name from Window > Preferences > Java > Code Style > Code Templates > Comments > Constructors account : ${user}&lt;/DD&gt;&lt;/DT&gt;&lt;/DL&gt;
+ * @since 1.0.5
+ * ${tags}
+ */
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.typecomment" name="typecomment" description="Comment for created types" context="typecomment_context" enabled="true" deleted="false">
+/**
+ * &lt;H4&gt;${todo} write one sentence description displayed in the java docs.&lt;/H4&gt;&#13;
+ * &lt;DL&gt;&lt;DT&gt;&lt;B&gt;Description :&lt;/B&gt;&lt;DD&gt;&#13;
+ * ${todo} write long description&#13;
+ * &lt;/DD&gt;&lt;/DT&gt;&#13;
+ * &lt;DT&gt;&lt;B&gt;Copyright :&lt;/B&gt;&lt;DD&gt;(c) ${year} ${todo} change author name from Window > Preferences > Java > Code Style > Code Templates > Comments > Types &lt;/DD&gt;&lt;/DT&gt;&#13;
+ * &lt;DT&gt;&lt;B&gt;Created :&lt;/B&gt;&lt;DD&gt;${date} ${time}.&lt;/DD&gt;&lt;/DT&gt;&lt;/DL&gt;&#13;
+ * &lt;p&gt;This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.&lt;/p&gt;
+ * &lt;p&gt;This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the &lt;a href="http://www.gnu.org/licenses/gpl.html"&gt;GNU General Public License&lt;/a&gt; for more details.&lt;/p&gt;
+ * @author ${todo} change author name from Window > Preferences > Java > Code Style > Code Templates > Comments > Types account: ${user}&#13;
+ * @version 3.0.0
+ * @since 1.0.5
+ */
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.fieldcomment" name="fieldcomment" description="Comment for fields" context="fieldcomment_context" enabled="true" deleted="false">
+/**
+ * ${todo} write field description. ${date} Comment for &lt;code&gt;${field}&lt;/code&gt;
+ * @since 1.0.5
+ */
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.methodcomment" name="methodcomment" description="Comment for non-overriding methods" context="methodcomment_context" enabled="true" deleted="false">
+/**
+ * ${todo} write method description.
+ * &lt;DL&gt;&lt;DT&gt;&lt;B&gt;Created :&lt;/B&gt;&lt;DD&gt; ${date} ${time}&lt;/DD&gt;&lt;/DT&gt;
+ * &lt;DT&gt;&lt;B&gt;Author :&lt;/B&gt;&lt;DD&gt;${todo} change author name from Window > Preferences > Java > Code Style > Code Templates > Comments > Methods account : ${user}&lt;/DD&gt;&lt;/DT&gt;&lt;/DL&gt;
+ * @since 1.0.5
+ * ${tags}
+ */
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.overridecomment" name="overridecomment" description="Comment for overriding methods" context="overridecomment_context" enabled="true" deleted="false">
+/**
+ * ${todo} write overridding method description (why overridden or implemented).
+ * &lt;DL&gt;&lt;DT&gt;&lt;B&gt;Created :&lt;/B&gt;&lt;DD&gt; ${date} ${time}&lt;/DD&gt;&lt;/DT&gt;
+ * &lt;DT&gt;&lt;B&gt;Author :&lt;/B&gt;&lt;DD&gt;${todo} change author name from Window > Preferences > Java > Code Style > Code Templates > Comments > Overriding methods account : ${user}&lt;/DD&gt;&lt;/DT&gt;&lt;/DL&gt;
+ * @since 1.0.5
+ * ${tags}
+ * ${see_to_overridden}
+ */
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.newtype" name="newtype" description="Newly created files" context="newtype_context" enabled="true" deleted="false">
+/*
+ * $Log:$
+ */
+${package_declaration}
+
+${typecomment}
+${type_declaration}
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.catchblock" name="catchblock" description="Code in new catch blocks" context="catchblock_context" enabled="true" deleted="false">
+
+// ${todo} Auto-generated catch block.
+System.out.println(${exception_var}.getMessage());
+		
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.methodbody" name="methodbody" description="Code in created method stubs" context="methodbody_context" enabled="true" deleted="false">
+
+// ${todo} Auto-generated method stub.
+${body_statement}
+		
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.constructorbody" name="constructorbody" description="Code in created constructor stubs" context="constructorbody_context" enabled="true" deleted="false">
+		
+${body_statement}
+// ${todo} Auto-generated constructor stub.
+		
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.getterbody" name="getterbody" description="Code in created getters" context="getterbody_context" enabled="true" deleted="false">
+return this.${field};
+	</template>
+	<template id="org.eclipse.jdt.ui.text.codetemplates.setterbody" name="setterbody" description="Code in created setters" context="setterbody_context" enabled="true" deleted="false">
+this.${field} = ${param};
+	</template>
+</templates>
+<!--
+	$Log: codetemplates.xml,v $
+	Revision 1.2  2005/02/22 13:34:50  harpechr
+	*** keyword substitution change ***
+	
+	Revision 1.1  2005/01/07 22:48:23  harpechr
+	Code templates defined.
+-->
