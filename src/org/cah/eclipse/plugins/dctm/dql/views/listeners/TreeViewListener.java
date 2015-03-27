@@ -128,13 +128,12 @@ public class TreeViewListener
 	 */
 	public void expandCabinetModel(final CabinetModel aCabinetModel)
 	{
-
-		ConnectionContentProvider.getInstance().expandCabinetModel(
-			aCabinetModel, false);
-		getTreeViewer().collapseToLevel(aCabinetModel,
-			AbstractTreeViewer.ALL_LEVELS);
-		getTreeViewer().refresh();
-		getTreeViewer().expandToLevel(aCabinetModel, 1);
+		getTreeViewer().getControl().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				ConnectionContentProvider.getInstance().expandCabinetModel(aCabinetModel, false);
+				getTreeViewer().refresh();
+			}
+		});
 	}
 
 	/**
@@ -154,11 +153,11 @@ public class TreeViewListener
 	 */
 	public void expandConnectionModel(final ConnectionModel connectionModel)
 	{
-
-		getTreeViewer().collapseToLevel(connectionModel,
-			AbstractTreeViewer.ALL_LEVELS);
-		getTreeViewer().refresh();
-		getTreeViewer().expandToLevel(connectionModel, 1);
+		getTreeViewer().getControl().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				getTreeViewer().refresh();
+			}
+		});
 	}
 
 	/**
@@ -178,14 +177,12 @@ public class TreeViewListener
 	 */
 	public void expandDocbaseModel(final DocbaseModel docbaseModel)
 	{
-
-		ConnectionContentProvider.getInstance().expandDocbaseModel(
-			docbaseModel, false);
-		getTreeViewer().collapseToLevel(docbaseModel,
-			AbstractTreeViewer.ALL_LEVELS);
-		getTreeViewer().refresh();
-		getTreeViewer().expandToLevel(docbaseModel, 1);
-
+		getTreeViewer().getControl().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				ConnectionContentProvider.getInstance().expandDocbaseModel(docbaseModel, false);
+				getTreeViewer().refresh();
+			}
+		});
 	}
 
 	/**
@@ -205,13 +202,12 @@ public class TreeViewListener
 	 */
 	public void expandDocumentModel(final DocumentModel aDocumentModel)
 	{
-
-		ConnectionContentProvider.getInstance().expandDocumentModel(
-			aDocumentModel, false);
-		getTreeViewer().collapseToLevel(aDocumentModel,
-			AbstractTreeViewer.ALL_LEVELS);
-		getTreeViewer().refresh();
-		getTreeViewer().expandToLevel(aDocumentModel, 1);
+		getTreeViewer().getControl().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				ConnectionContentProvider.getInstance().expandDocumentModel(aDocumentModel, false);
+				getTreeViewer().refresh();
+			}
+		});
 	}
 
 	/**
@@ -231,13 +227,12 @@ public class TreeViewListener
 	 */
 	public void expandFolderModel(final AbstractSysObjectModel aFolderModel)
 	{
-
-		ConnectionContentProvider.getInstance().expandFolderModel(aFolderModel,
-			false);
-		getTreeViewer().collapseToLevel(aFolderModel,
-			AbstractTreeViewer.ALL_LEVELS);
-		getTreeViewer().refresh();
-		getTreeViewer().expandToLevel(aFolderModel, 1);
+		getTreeViewer().getControl().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				ConnectionContentProvider.getInstance().expandFolderModel(aFolderModel, false);
+				getTreeViewer().refresh();
+			}
+		});
 	}
 
 	/**
@@ -257,13 +252,12 @@ public class TreeViewListener
 	 */
 	public void expandGroupModel(final GroupModel aGroupModel)
 	{
-
-		ConnectionContentProvider.getInstance().expandGroupModel(aGroupModel,
-			false);
-		getTreeViewer().collapseToLevel(aGroupModel,
-			AbstractTreeViewer.ALL_LEVELS);
-		getTreeViewer().refresh();
-		getTreeViewer().expandToLevel(aGroupModel, 1);
+		getTreeViewer().getControl().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				ConnectionContentProvider.getInstance().expandGroupModel(aGroupModel, false);
+				getTreeViewer().refresh();
+			}
+		});
 	}
 
 	/**
@@ -283,13 +277,12 @@ public class TreeViewListener
 	 */
 	public void expandGroupsModel(final GroupsModel aGroupsModel)
 	{
-
-		ConnectionContentProvider.getInstance().expandGroupsModel(aGroupsModel,
-			false);
-		getTreeViewer().collapseToLevel(aGroupsModel,
-			AbstractTreeViewer.ALL_LEVELS);
-		getTreeViewer().refresh();
-		getTreeViewer().expandToLevel(aGroupsModel, 1);
+		getTreeViewer().getControl().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				ConnectionContentProvider.getInstance().expandGroupsModel(aGroupsModel, false);
+				getTreeViewer().refresh();
+			}
+		});
 	}
 
 	/**
@@ -309,13 +302,12 @@ public class TreeViewListener
 	 */
 	public void expandTableModel(final TableModel tableModel)
 	{
-
-		ConnectionContentProvider.getInstance().expandTableModel(tableModel,
-			false);
-		getTreeViewer().collapseToLevel(tableModel,
-			AbstractTreeViewer.ALL_LEVELS);
-		getTreeViewer().refresh();
-		getTreeViewer().expandToLevel(tableModel, 1);
+		getTreeViewer().getControl().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				ConnectionContentProvider.getInstance().expandTableModel(tableModel, false);
+				getTreeViewer().refresh();
+			}
+		});
 	}
 
 	/**
@@ -335,14 +327,12 @@ public class TreeViewListener
 	 */
 	public void expandTypeModel(final TypeModel typeModel)
 	{
-
-		ConnectionContentProvider.getInstance().expandTypeModel(typeModel,
-			false);
-		getTreeViewer().collapseToLevel(typeModel,
-			AbstractTreeViewer.ALL_LEVELS);
-		getTreeViewer().refresh();
-		getTreeViewer().expandToLevel(typeModel, 1);
-
+		getTreeViewer().getControl().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				ConnectionContentProvider.getInstance().expandTypeModel(typeModel, false);
+				getTreeViewer().refresh();
+			}
+		});
 	}
 
 	/**

@@ -112,8 +112,8 @@ import com.documentum.fc.client.IDfSession;
 import com.documentum.fc.common.DfException;
 import com.documentum.fc.common.DfId;
 import com.documentum.fc.common.IDfId;
-import com.documentum.xerces_2_3_0.xml.serialize.OutputFormat;
-import com.documentum.xerces_2_3_0.xml.serialize.XMLSerializer;
+import com.documentum.xerces_2_6_2.xml.serialize.OutputFormat;
+import com.documentum.xerces_2_6_2.xml.serialize.XMLSerializer;
 
 
 /**
