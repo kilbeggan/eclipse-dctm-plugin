@@ -51,6 +51,7 @@ import org.cah.eclipse.plugins.dctm.dql.actions.results.CheckInAction;
 import org.cah.eclipse.plugins.dctm.dql.actions.results.CheckInMajorAction;
 import org.cah.eclipse.plugins.dctm.dql.actions.results.CheckInMinorAction;
 import org.cah.eclipse.plugins.dctm.dql.actions.results.CheckOutAction;
+import org.cah.eclipse.plugins.dctm.dql.actions.results.CopyCellValueToClipboardAction;
 import org.cah.eclipse.plugins.dctm.dql.actions.results.DumpObjectAction;
 import org.cah.eclipse.plugins.dctm.dql.actions.results.ExportResultsAction;
 import org.cah.eclipse.plugins.dctm.dql.actions.results.ExportSelectedAction;
@@ -64,8 +65,11 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
@@ -249,6 +253,8 @@ public class ResultView
 	 */
 	private ReturnAllVersionsAction	returnAllVersionsAction	= null;
 
+	private CopyCellValueToClipboardAction copyCellValueToClipboardAction = null;
+	
 	/**
 	 * The result tables tab folder.
 	 * 
@@ -423,7 +429,28 @@ public class ResultView
 		resultSetTable.setMenu(contextMenu);
 		menuManager.addMenuListener(new ResultViewMenuListener(this,
 			resultSetTable));
-
+		
+		resultSetTable.addListener(SWT.MouseDown, new Listener() {
+			@Override
+			public void handleEvent(org.eclipse.swt.widgets.Event event) {
+				Point point = new Point(event.x, event.y);
+				TableItem item = resultSetTable.getItem(point);
+				
+				if (item == null) {
+					mouseClickCellValue = null;
+					return;
+				}
+				
+				for (int col = 0; col < resultSetTable.getColumnCount(); col++) {
+					Rectangle rect = item.getBounds(col);
+					if (rect.contains(point)) {
+						mouseClickCellValue = item.getText(col);
+						return;
+					}
+				}
+			}
+		});
+				
 		CTabItem tabItem = new CTabItem(getTablesTabFolder(), SWT.NONE);
 		int length = (tip.length() <= 25) ? tip.length() : 25;
 		tabItem.setText(tip.substring(0, length));
@@ -437,6 +464,12 @@ public class ResultView
 		getSite().getPage().activate(instance);
 	}
 
+	private String mouseClickCellValue = null;
+	
+	public String getMouseClickCellValue() {
+		return mouseClickCellValue;
+	}
+	
 	/**
 	 * Bind a collection to a table.
 	 * <DL>
@@ -890,6 +923,10 @@ public class ResultView
 
 		return this.returnAllVersionsAction;
 	}
+	
+	public CopyCellValueToClipboardAction getCopyCellValueToClipboardAction() {
+		return this.copyCellValueToClipboardAction;
+	}
 
 	/**
 	 * Get the selected table.
@@ -1191,7 +1228,10 @@ public class ResultView
 		getReturnAllRowsAction().setImageDescriptor(
 			ImageCache.getImageDescriptor(IImageCache.RETURN_ALL_ROWS_ICON));
 		getReturnAllRowsAction().init(this);
-
+		
+		setCopyCellValueToClipboardAction(new CopyCellValueToClipboardAction());
+		getCopyCellValueToClipboardAction().setText("Copy cell to clipboard");
+		getCopyCellValueToClipboardAction().init(this);
 	}
 
 	/**
@@ -1476,6 +1516,10 @@ public class ResultView
 		this.returnAllVersionsAction = aReturnAllVersionsAction;
 	}
 
+	protected void setCopyCellValueToClipboardAction(final CopyCellValueToClipboardAction aCopyCellValueToClipboardAction) {
+		this.copyCellValueToClipboardAction = aCopyCellValueToClipboardAction;
+	}
+	
 	/**
 	 * Set the tables folder.
 	 * <DL>

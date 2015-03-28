@@ -158,20 +158,24 @@ public class ResultViewMenuListener
 					manager.add(getResultView().getReturnAllRowsAction());
 				} else
 				{
+					String cellValue = getResultView().getMouseClickCellValue();
+					if (cellValue != null && cellValue.length() > 0) {
+						manager.add(new Separator());
+						manager.add(getResultView().getCopyCellValueToClipboardAction());
+						manager.add(new Separator());	
+					}
+					
 					manager.add(getResultView().getDumpObjectAction());
 					manager.add(getResultView().getFetchApiAction());
 					manager.add(getResultView().getReturnAllVersionsAction());
 					contentSubmenu.add(getResultView().getGetContentAction());
 					contentSubmenu.add(getResultView().getCheckOutAction());
-					contentSubmenu.add(getResultView()
-						.getCancelCheckOutAction());
+					contentSubmenu.add(getResultView().getCancelCheckOutAction());
 					contentSubmenu.add(getResultView().getCheckInAction());
 					contentSubmenu.add(getResultView().getCheckInMinorAction());
 					contentSubmenu.add(getResultView().getCheckInMajorAction());
-					manager.add(new Separator(
-						ResultViewMenuListener.SUBMENU_CONTENT));
-					manager.appendToGroup(
-						ResultViewMenuListener.SUBMENU_CONTENT, contentSubmenu);
+					manager.add(new Separator(ResultViewMenuListener.SUBMENU_CONTENT));
+					manager.appendToGroup(ResultViewMenuListener.SUBMENU_CONTENT, contentSubmenu);
 				}
 			} else
 			{
