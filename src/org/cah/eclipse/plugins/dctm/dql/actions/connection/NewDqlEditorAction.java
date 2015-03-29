@@ -53,7 +53,11 @@ import org.cah.eclipse.plugins.dctm.dql.editors.dql.DQLEditorInput;
 import org.cah.eclipse.plugins.dctm.dql.views.ConnectionView;
 import org.cah.eclipse.plugins.dctm.dql.views.MessageView;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 
 
 /**
@@ -134,11 +138,28 @@ public class NewDqlEditorAction
 			if(editor instanceof DQLEditor)
 			{
 				((DQLEditor) editor).setText(((DQLEditor) editor).getText()
-					+ IDCTMPlugin.NEWLINE + DQLEditor.getWelcomemessage());
+					+ IDCTMPlugin.NEWLINE + (hasTwoOrMoreDqlEditors() ? "" : DQLEditor.getWelcomemessage()));
 			}
 		} catch(PartInitException piex)
 		{
 			MessageView.getInstance().addMessage(piex);
 		}
+	}
+	
+	private boolean hasTwoOrMoreDqlEditors() {
+		int count = 0;
+		for (IWorkbenchWindow window : PlatformUI.getWorkbench().getWorkbenchWindows()) {
+			for (IWorkbenchPage page : window.getPages()) {
+				for (IEditorReference ref : page.getEditorReferences()) {
+					if (ref.getEditor(false) instanceof DQLEditor) {
+						if (++count >= 2) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+		
+		return false;
 	}
 }

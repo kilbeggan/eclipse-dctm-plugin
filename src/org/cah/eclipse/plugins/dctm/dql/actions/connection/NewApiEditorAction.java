@@ -53,7 +53,11 @@ import org.cah.eclipse.plugins.dctm.dql.editors.api.APIEditorInput;
 import org.cah.eclipse.plugins.dctm.dql.views.ConnectionView;
 import org.cah.eclipse.plugins.dctm.dql.views.MessageView;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 
 
 /**
@@ -134,11 +138,28 @@ public class NewApiEditorAction
 			if(editor instanceof APIEditor)
 			{
 				((APIEditor) editor).setText(((APIEditor) editor).getText()
-					+ IDCTMPlugin.NEWLINE + APIEditor.getWelcomemessage());
+					+ IDCTMPlugin.NEWLINE + (hasTwoOrMoreApiEditors() ? "" : APIEditor.getWelcomemessage()));
 			}
 		} catch(PartInitException piex)
 		{
 			MessageView.getInstance().addMessage(piex);
 		}
+	}
+	
+	private boolean hasTwoOrMoreApiEditors() {
+		int count = 0;
+		for (IWorkbenchWindow window : PlatformUI.getWorkbench().getWorkbenchWindows()) {
+			for (IWorkbenchPage page : window.getPages()) {
+				for (IEditorReference ref : page.getEditorReferences()) {
+					if (ref.getEditor(false) instanceof APIEditor) {
+						if (++count >= 2) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+		
+		return false;
 	}
 }
