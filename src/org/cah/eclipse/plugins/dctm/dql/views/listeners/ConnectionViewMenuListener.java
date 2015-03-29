@@ -72,6 +72,7 @@ import org.cah.eclipse.plugins.dctm.dql.views.ConnectionView;
 import org.cah.eclipse.plugins.dctm.dql.views.connection.AspectModuleModel;
 import org.cah.eclipse.plugins.dctm.dql.views.connection.ConnectionContentProvider;
 import org.cah.eclipse.plugins.dctm.dql.views.connection.ConnectionModel;
+import org.cah.eclipse.plugins.dctm.dql.views.connection.DocbaseModel;
 import org.cah.eclipse.plugins.dctm.dql.views.connection.DocumentModel;
 import org.cah.eclipse.plugins.dctm.dql.views.connection.FolderModel;
 import org.cah.eclipse.plugins.dctm.dql.views.connection.GroupModel;
@@ -248,6 +249,10 @@ public class ConnectionViewMenuListener
 				}
 				manager.add(getConnectionView().getRemoveConnectionAction());
 				manager.add(getConnectionView().getNewConnectionAction());
+			} else if(model instanceof DocbaseModel)
+			{
+				manager.add(getConnectionView().getNewDqlEditorAction());
+				manager.add(getConnectionView().getNewApiEditorAction());
 			} else if(model instanceof TypesModel)
 			{
 				dqlSubmenu.add(getConnectionView().getCreateTypeDQLAction());
